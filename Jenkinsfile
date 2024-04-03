@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'mvn clean package'
+                bat 'mvn.bat clean package'
             }
             post {
                 success {

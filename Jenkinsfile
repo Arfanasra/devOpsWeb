@@ -19,7 +19,7 @@ pipeline {
                     def warFile = findFiles(glob: '**/target/*.war')[0]
                     if (warFile != null) {
                         deploy adapters: [tomcat9(credentialsId: 'a81fb9dc-989f-41c5-8d26-376deee1a489', path: '', url: 'http://localhost:8181/')], 
-                               contextPath: '/src/main/webapp', 
+                               contextPath: null, 
                                war: warFile.path
                     } else {
                         error "WAR file not found."

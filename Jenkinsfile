@@ -18,7 +18,7 @@ pipeline {
                 script {
                     def warFile = findFiles(glob: '**/target/*.war')[0]
                     if (warFile != null) {
-                        deploy adapters: [tomcat9(credentialsId: 'a81fb9dc-989f-41c5-8d26-376deee1a489', path: '', url: 'http://192.168.56.1:8181/')], 
+                        deploy adapters: [tomcat9(credentialsId: 'a81fb9dc-989f-41c5-8d26-376deee1a489', path: '', url: 'http://localhost:8181/')], 
                                contextPath: '/src/main/webapp', 
                                war: warFile.path
                     } else {
